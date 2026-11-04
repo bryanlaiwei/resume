@@ -1,0 +1,10 @@
+# Build output
+*.pdf
+*.log
+*.synctex.gz
+*.aux
+*.xdv
+*.out
+
+# macOS
+.DS_Store

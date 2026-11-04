@@ -1,0 +1,283 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+ignoreheadfoot,
+top=1.3 cm,
+bottom=1.3 cm,
+left=1.4 cm,
+right=1.4 cm,
+footskip=1.0 cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0,0,0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Bryan Wei's CV},
+    pdfauthor={Bryan Wei},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% ATS-safe PDF
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{sourcesanspro}
+\fi
+
+
+% Global layout
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.00001cm}{0.00001cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+}{
+    & \secondColumn
+    \end{tabular*}
+    \endonecolentry
+}
+
+% Experience entry (fixed layout)
+\newenvironment{experienceentry}[4]{
+    \begin{onecolentry}
+    \begin{tabularx}{\linewidth}{@{}X r@{}}
+        \textbf{#1} & #4 \\
+        \textit{#2} & \textit{#3} \\
+    \end{tabularx}
+    \end{onecolentry}
+}{}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\centering\linespread{1.5}
+}{
+    \par
+}
+
+\begin{document}
+
+\newcommand{\AND}{\unskip\cleaders\copy\ANDbox\hskip\wd\ANDbox\ignorespaces}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
+% Optically center the page: less space above than below (2:3)
+\vspace*{\stretch{2}}
+
+\begin{onecolentry}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+{\fontsize{25 pt}{25 pt}\selectfont \textbf{Bryan Wei}}
+&
+\normalsize
+\faLinkedin~\href{https://www.linkedin.com/in/bryan-wei-23bb552a9}{LinkedIn}
+\kern 8pt
+\faGithub~\href{https://github.com/bryanlaiwei}{GitHub}
+\kern 8pt
+\faGlobe~\href{https://bryanwei.com/}{Portfolio}
+\kern 8pt
+\faEnvelope~\href{mailto:l76wei@uwaterloo.ca}{l76wei@uwaterloo.ca}
+
+
+
+\end{tabularx}
+\end{onecolentry}
+
+% ================= Skills =================
+\section{Skills}
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\textbf{Languages}\textbf{:} Python, TypeScript, JavaScript, Java, C++, C, SQL, Bash, PowerShell
+\end{onecolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\textbf{Frameworks:} React, Next.js, React Native, three.js, Node.js, Express, FastAPI, Spring Boot, PyTorch, Axios
+\end{onecolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\textbf{Tools \& Databases:} Git, Linux, AWS, Azure, Unity, Bun, PostgreSQL, MySQL, SQLite, MongoDB, Convex, Tinybird
+\end{onecolentry}
+
+% \vspace{0.10 cm}
+
+% \begin{onecolentry}
+% \textbf{Tools \& Platforms:} Bun, Git, GitHub, Linux, Amazon Web Services, Postman, Axios
+% \end{onecolentry}
+
+% ================= Education =================
+\section{Education}
+\vspace{0.10 cm}
+
+\begin{twocolentry}{\textit{Sep 2024 - Apr 2029}}
+\textbf{University of Waterloo}, \textit{Honours Computer Science Co-op}
+
+\end{twocolentry}
+
+% ================= Experience =================
+\section{Experience}
+\vspace{0.10 cm}
+
+\begin{experienceentry}
+{Full Stack Developer}
+{Workplace Safety and Insurance Board - Innovation Lab}
+{Waterloo, ON}
+{\textit{Sep 2026 - Present}}
+\end{experienceentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Engineered a \textbf{test data generation engine} that writes customizable data into \textbf{SQL} files or \textbf{Microsoft Fabric} tables, cutting generation time for \textbf{1 million rows} from \textbf{20s to 7s} with \textbf{multithreading}
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.20 cm}
+
+\begin{experienceentry}
+{Software Developer}
+{Waterloo Reality Labs}
+{Waterloo, ON}
+{\textit{Sep 2026 - Present}}
+\end{experienceentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Engineered a \textbf{gesture intensity scoring module} that rates how much effort goes into any hand gesture on a universal 0--1 scale, achieving \textbf{$\geq$90\% ranking accuracy} across effort levels by combining joint speed, snap, and move time
+\item Developed a \textbf{few-shot Siamese network} that recognizes similar hand gestures based on 1--3 example clips with up to \textbf{98\% accuracy}, using \textbf{PyTorch triplet loss} and exporting to \textbf{ONNX} for \textbf{Unity}
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.20 cm}
+
+\begin{experienceentry}
+{Software Developer}
+{Traces}
+{Toronto, ON}
+{\textit{May 2026 - Aug 2026}}
+\end{experienceentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Contributed to Traces, a developer platform used by \textbf{100+ organizations} for capturing, sharing, and continuing coding sessions across different coding agents and teams
+
+\item Built and maintained \textbf{data ingestion adapters} for \textbf{14+ coding agents}, including local session discovery, content parsing, and \textbf{schema normalization} across \textbf{JSONL} files, \textbf{SQLite} databases, and cloud-backed session stores
+
+\item Built a \textbf{subagent discovery pipeline} that infers subagent relationships for \textbf{8+ agents} with \textbf{97\% accuracy}, preserving lineage across local indexing, API surfaces, remote sync, and \textbf{Convex} storage
+
+\item Developed a \textbf{token usage tracking} feature for \textbf{8+ agents}, mapping agent-specific per-API-call and session-level usage into shared \textbf{TypeScript} schemas, with CLI sync and persistence in \textbf{Convex} and \textbf{Tinybird}, achieving \textbf{99\% accuracy}
+
+\item Designed a provider-neutral \textbf{cloud agent session capture engine} that works across polling, webhook, and streaming interfaces, with \textbf{concurrent job processing} and \textbf{idempotent, retry-safe persistence}
+\end{highlights}
+\end{onecolentry}
+
+% ================= Awards =================
+\section{Projects}
+\vspace{0.10 cm}
+
+
+\begin{twocolentry}{\textit{Oct 2026}}
+    \textbf{StickDrift \href{https://github.com/bryanlaiwei/StickDrift}{\faGithub} \href{https://www.youtube.com/watch?v=d01z2tL992U}{\faYoutube}}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Developed a \textbf{movement disorder monitoring platform} for seniors using \textbf{React}, \textbf{TypeScript}, \textbf{three.js}, \textbf{FastAPI}, and \textbf{PostgreSQL}, where controller games capture joystick and accelerometer data to detect early signs of movement disorders with \textbf{machine learning}
+\item Trained a \textbf{PyTorch TCN} to identify hand-movement patterns associated with tremor, stroke, and Parkinson's, integrating pattern scores into a caregiver dashboard
+% \item Implemented a real-time data pipeline streaming controller inputs at \textbf{10 Hz} through \textbf{FastAPI} and \textbf{WebSockets}, enabling caregivers to monitor and analyze movement live
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{\textit{Sep 2026}}
+    \textbf{Contour \href{https://github.com/bryanlaiwei/Contour}{\faGithub} \href{https://contourmaps.vercel.app}{\faGlobe}}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Built a \textbf{project visualization platform} using \textbf{React}, \textbf{TypeScript}, \textbf{Node.js}, \textbf{Express}, and \textbf{PostgreSQL}, automatically transforming GitHub activity and coding-agent sessions into an interactive project map
+\item Engineered \textbf{GitHub webhook} ingestion for pull requests, reviews, and CI runs, plus a local collector that scans \textbf{Codex}, \textbf{Claude Code}, and \textbf{Cursor} sessions and uses \textbf{SQLite} checkpoints to \textbf{incrementally sync} new activity
+\item Designed an \textbf{asynchronous event processing pipeline} using \textbf{pg-boss} and \textbf{PostgreSQL}, integrating the \textbf{OpenAI~API} to organize development activity into the live map
+\end{highlights}
+\end{onecolentry}
+
+
+
+% ================= Awards =================
+% \section{Certifications}
+% \vspace{0.10 cm}
+
+% \begin{twocolentry}{\textit{May 2025}}
+% \textbf{AWS Certified Cloud Practitioner}, Amazon Web Services (AWS)
+% \end{twocolentry}
+
+% \vspace{0.20 cm}
+
+% \begin{twocolentry}{\textit{May 2025}}
+% \textbf{SQL for Data Science}, University of California, Davis
+% \end{twocolentry}
+
+\vspace*{\stretch{3}}
+
+\end{document}
