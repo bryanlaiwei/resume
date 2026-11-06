@@ -3,8 +3,8 @@
 % Packages:
 \usepackage[
 ignoreheadfoot,
-top=1.3 cm,
-bottom=1.3 cm,
+top=1.07 cm,
+bottom=1.13 cm,
 left=1.4 cm,
 right=1.4 cm,
 footskip=1.0 cm
@@ -141,7 +141,7 @@ footskip=1.0 cm
 \vspace{0.10 cm}
 
 \begin{onecolentry}
-\textbf{Frameworks:} React, Next.js, React Native, three.js, Node.js, Express, FastAPI, Spring Boot, PyTorch, Axios
+\textbf{Frameworks:} React, Next.js, React Native, three.js, Node.js, Express, FastAPI, Spring Boot, PyTorch
 \end{onecolentry}
 
 \vspace{0.10 cm}
@@ -180,7 +180,8 @@ footskip=1.0 cm
 
 \begin{onecolentry}
 \begin{highlights}
-\item Engineered a \textbf{test data generation engine} that writes customizable data into \textbf{SQL} files or \textbf{Microsoft Fabric} tables, cutting generation time for \textbf{1 million rows} from \textbf{20s to 7s} with \textbf{multithreading}
+\item Engineered a \textbf{multithreaded synthetic test-data engine} that writes schema-configurable datasets to \textbf{SQL} files and \textbf{Microsoft Fabric} tables, cutting \textbf{1M-row} generation time by \textbf{65\% (20s $\rightarrow$ 7s)}
+\item Engineered a \textbf{indoor wayfinding app} helping \textbf{3,500+ employees} across \textbf{8 offices} learn their workspaces during RTO, using \textbf{QR-anchored positioning} and \textbf{Dijkstra routing} over multi-floor maps
 \end{highlights}
 \end{onecolentry}
 
@@ -197,8 +198,8 @@ footskip=1.0 cm
 
 \begin{onecolentry}
 \begin{highlights}
-\item Engineered a \textbf{gesture intensity scoring module} that rates how much effort goes into any hand gesture on a universal 0--1 scale, achieving \textbf{$\geq$90\% ranking accuracy} across effort levels by combining joint speed, snap, and move time
-\item Developed a \textbf{few-shot Siamese network} that recognizes similar hand gestures based on 1--3 example clips with up to \textbf{98\% accuracy}, using \textbf{PyTorch triplet loss} and exporting to \textbf{ONNX} for \textbf{Unity}
+\item Developed a \textbf{few-shot Siamese network} using \textbf{PyTorch triplet loss} that recognizes new hand gestures from only \textbf{1--3 reference clips} at up to \textbf{98\% accuracy}, deployed via \textbf{ONNX} for in-engine inference in \textbf{Unity}
+\item Engineered a \textbf{gesture intensity scoring module} that rates hand-gesture effort on a normalized 0--1 scale from \textbf{kinematic features} (joint velocity, snap, movement time), achieving \textbf{$\geq$90\% ranking accuracy} across effort levels
 \end{highlights}
 \end{onecolentry}
 
@@ -215,15 +216,15 @@ footskip=1.0 cm
 
 \begin{onecolentry}
 \begin{highlights}
-\item Contributed to Traces, a developer platform used by \textbf{100+ organizations} for capturing, sharing, and continuing coding sessions across different coding agents and teams
+\item Built core features for Traces, a developer platform used by \textbf{100+ organizations} to capture, share, and continue \textbf{AI coding-agent} sessions across tools and teams
 
-\item Built and maintained \textbf{data ingestion adapters} for \textbf{14+ coding agents}, including local session discovery, content parsing, and \textbf{schema normalization} across \textbf{JSONL} files, \textbf{SQLite} databases, and cloud-backed session stores
+\item Built \textbf{data ingestion adapters} for \textbf{14+ coding agents}, handling local session discovery, content parsing, and \textbf{schema normalization} across \textbf{JSONL} files, \textbf{SQLite} databases, and cloud-backed session stores
 
-\item Built a \textbf{subagent discovery pipeline} that infers subagent relationships for \textbf{8+ agents} with \textbf{97\% accuracy}, preserving lineage across local indexing, API surfaces, remote sync, and \textbf{Convex} storage
+\item Built a \textbf{subagent discovery pipeline} that infers parent--child relationships for \textbf{8+ agents} with \textbf{97\% accuracy}, preserving lineage across local indexing, API surfaces, remote sync, and \textbf{Convex} storage
 
-\item Developed a \textbf{token usage tracking} feature for \textbf{8+ agents}, mapping agent-specific per-API-call and session-level usage into shared \textbf{TypeScript} schemas, with CLI sync and persistence in \textbf{Convex} and \textbf{Tinybird}, achieving \textbf{99\% accuracy}
+\item Developed \textbf{token usage tracking} for \textbf{8+ agents} at \textbf{99\% accuracy}, mapping agent-specific per-API-call and session-level usage into shared \textbf{TypeScript} schemas, with CLI sync and persistence in \textbf{Convex} and \textbf{Tinybird}
 
-\item Designed a provider-neutral \textbf{cloud agent session capture engine} that works across polling, webhook, and streaming interfaces, with \textbf{concurrent job processing} and \textbf{idempotent, retry-safe persistence}
+\item Designed a provider-neutral \textbf{cloud agent session capture engine} spanning polling, webhook, and streaming interfaces, with \textbf{concurrent job processing} and \textbf{idempotent, retry-safe persistence}
 \end{highlights}
 \end{onecolentry}
 
@@ -240,9 +241,9 @@ footskip=1.0 cm
 
 \begin{onecolentry}
 \begin{highlights}
-\item Developed a \textbf{movement disorder monitoring platform} for seniors using \textbf{React}, \textbf{TypeScript}, \textbf{three.js}, \textbf{FastAPI}, and \textbf{PostgreSQL}, where controller games capture joystick and accelerometer data to detect early signs of movement disorders with \textbf{machine learning}
-\item Trained a \textbf{PyTorch TCN} to identify hand-movement patterns associated with tremor, stroke, and Parkinson's, integrating pattern scores into a caregiver dashboard
-% \item Implemented a real-time data pipeline streaming controller inputs at \textbf{10 Hz} through \textbf{FastAPI} and \textbf{WebSockets}, enabling caregivers to monitor and analyze movement live
+\item Developed a \textbf{movement disorder monitoring platform} for seniors using \textbf{React}, \textbf{TypeScript}, \textbf{three.js}, \textbf{FastAPI}, and \textbf{PostgreSQL}, where senior-oriented controller games capture joystick and accelerometer data to detect early signs of movement disorders with \textbf{machine learning}
+\item Trained a \textbf{PyTorch Temporal Convolutional Network} on joystick and accelerometer \textbf{time series} to detect tremor, stroke, and Parkinson's movement patterns with \textbf{96\% accuracy}, feeding pattern scores into a caregiver dashboard
+\item Built a \textbf{real-time telemetry pipeline} streaming controller input over \textbf{FastAPI WebSockets}, enabling caregivers to monitor movement live
 \end{highlights}
 \end{onecolentry}
 
@@ -257,8 +258,8 @@ footskip=1.0 cm
 \begin{onecolentry}
 \begin{highlights}
 \item Built a \textbf{project visualization platform} using \textbf{React}, \textbf{TypeScript}, \textbf{Node.js}, \textbf{Express}, and \textbf{PostgreSQL}, automatically transforming GitHub activity and coding-agent sessions into an interactive project map
-\item Engineered \textbf{GitHub webhook} ingestion for pull requests, reviews, and CI runs, plus a local collector that scans \textbf{Codex}, \textbf{Claude Code}, and \textbf{Cursor} sessions and uses \textbf{SQLite} checkpoints to \textbf{incrementally sync} new activity
-\item Designed an \textbf{asynchronous event processing pipeline} using \textbf{pg-boss} and \textbf{PostgreSQL}, integrating the \textbf{OpenAI~API} to organize development activity into the live map
+\item Engineered \textbf{GitHub webhook} ingestion for PRs, reviews, and CI runs, plus a local collector that scans \textbf{Codex}, \textbf{Claude Code}, and \textbf{Cursor} sessions and \textbf{incrementally syncs} new activity via \textbf{SQLite} checkpoints
+\item Designed an \textbf{asynchronous event-processing pipeline} on \textbf{pg-boss} job queues and \textbf{PostgreSQL}, using the \textbf{OpenAI~API} to organize raw development activity into the live project map
 \end{highlights}
 \end{onecolentry}
 
