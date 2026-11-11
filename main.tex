@@ -117,13 +117,13 @@ footskip=1.0 cm
 {\fontsize{25 pt}{25 pt}\selectfont \textbf{Bryan Wei}}
 &
 \normalsize
-\faLinkedin~\href{https://www.linkedin.com/in/bryan-wei-23bb552a9}{LinkedIn}
+\href{https://www.linkedin.com/in/bryan-wei-23bb552a9}{\faLinkedin~LinkedIn}
 \kern 8pt
-\faGithub~\href{https://github.com/bryanlaiwei}{GitHub}
+\href{https://github.com/bryanlaiwei}{\faGithub~GitHub}
 \kern 8pt
-\faGlobe~\href{https://bryanwei.com/}{Portfolio}
+\href{https://bryanwei.com/}{\faGlobe~Portfolio}
 \kern 8pt
-\faEnvelope~\href{mailto:l76wei@uwaterloo.ca}{l76wei@uwaterloo.ca}
+\href{mailto:l76wei@uwaterloo.ca}{\faEnvelope~l76wei@uwaterloo.ca}
 
 
 
@@ -155,7 +155,7 @@ footskip=1.0 cm
 \begin{onecolentry}
 \begin{highlights}
 \item Engineered a \textbf{multithreaded synthetic test-data engine} that writes schema-configurable datasets to SQL files and Microsoft Fabric tables, cutting 1M-row generation time by \textbf{65\% (20s $\rightarrow$ 7s)}
-\item Built an \textbf{indoor wayfinding app} helping \textbf{3,500+ employees} across \textbf{8 offices} learn their workspaces during RTO, using \textbf{QR-anchored positioning} and \textbf{Dijkstra routing} over multi-floor maps
+\item Built an \textbf{indoor wayfinding app} helping \textbf{3,500+ employees} across \textbf{8 offices} learn their workspaces during return-to-office, using QR-anchored positioning and \textbf{Dijkstra routing} over multi-floor maps
 \end{highlights}
 \end{onecolentry}
 
@@ -173,7 +173,7 @@ footskip=1.0 cm
 \begin{onecolentry}
 \begin{highlights}
 \item Developed a \textbf{few-shot Siamese network} using \textbf{PyTorch triplet loss} that recognizes new hand gestures from only 1--3 reference clips at up to \textbf{98\% accuracy}, deployed via \textbf{ONNX} for in-engine inference in \textbf{Unity}
-\item Designed a \textbf{gesture intensity scoring module} that rates hand-gesture effort on a normalized 0--1 scale from kinematic features (joint velocity, snap, movement time), achieving \textbf{$\geq$90\% ranking accuracy} across effort levels
+\item Designed a \textbf{gesture intensity scoring module} that rates hand-gesture effort on a normalized 0--1 scale from kinematic features (joint velocity, snap, movement time), achieving \textbf{93\% ranking accuracy} across effort levels
 \end{highlights}
 \end{onecolentry}
 
@@ -208,14 +208,14 @@ footskip=1.0 cm
 
 
 \begin{twocolentry}{\textit{Oct 2026}}
-    \textbf{StickDrift}\hspace{0.20cm}$|$\hspace{0.20cm}\href{https://github.com/bryanlaiwei/StickDrift}{\faGithub~GitHub}\hspace{0.20cm}\href{https://www.youtube.com/watch?v=d01z2tL992U}{\faYoutube~Demo}
+    \textbf{StickDrift}\hspace{0.20cm}$|$\hspace{0.20cm}\href{https://github.com/bryanlaiwei/StickDrift}{\faGithub~GitHub}\hspace{0.20cm}\href{https://www.youtube.com/watch?v=d01z2tL992U}{\faYoutube~Demo}\hspace{0.20cm}\href{https://devpost.com/software/stickdrift}{\faLink~Devpost}
 \end{twocolentry}
 
 \vspace{0.10 cm}
 
 \begin{onecolentry}
 \begin{highlights}
-\item Developed a \textbf{movement disorder monitoring platform} for seniors using \textbf{React}, \textbf{TypeScript}, \textbf{three.js}, \textbf{FastAPI}, and \textbf{PostgreSQL}, where senior-oriented controller games capture joystick and accelerometer data to detect early signs of movement disorders with machine learning
+\item Developed a \textbf{movement disorder monitoring platform} for seniors, where senior-oriented controller games capture joystick and accelerometer data to detect early signs of movement disorders with machine learning
 \item Trained a \textbf{PyTorch Temporal Convolutional Network} on joystick and accelerometer time series to detect tremor, stroke, and Parkinson's movement patterns with \textbf{96\% accuracy}, feeding pattern scores into a caregiver dashboard
 \item Built a \textbf{real-time telemetry pipeline} streaming controller input over \textbf{FastAPI WebSockets}, enabling caregivers to monitor movement live
 \end{highlights}
@@ -231,9 +231,9 @@ footskip=1.0 cm
 
 \begin{onecolentry}
 \begin{highlights}
-\item Built a \textbf{project visualization platform} using \textbf{React}, \textbf{TypeScript}, \textbf{Node.js}, \textbf{Express}, and \textbf{PostgreSQL}, automatically transforming GitHub activity and coding-agent sessions into an interactive project map
-\item Engineered \textbf{GitHub webhook} ingestion for PRs, reviews, and CI runs, plus a local collector that scans Codex, Claude Code, and Cursor sessions and \textbf{incrementally syncs} new activity via \textbf{SQLite} checkpoints
-\item Designed an \textbf{asynchronous event-processing pipeline} on \textbf{pg-boss} job queues and \textbf{PostgreSQL}, using the \textbf{OpenAI~API} to organize raw development activity into the live project map
+\item Built a \textbf{project visualization platform} that automatically transforms teammates' GitHub activity and coding-agent sessions into one interactive project map, piecing together work scattered across tools and devices
+\item Engineered \textbf{GitHub webhook} ingestion for PRs, reviews, and CI runs, plus a local collector that \textbf{incrementally syncs} coding-agent sessions via \textbf{SQLite} checkpoints, cutting re-uploads by \textbf{99\%} and making rescans \textbf{3.6$\times$ faster}
+\item Designed an \textbf{asynchronous event-processing pipeline} on \textbf{pg-boss} that serializes processing per project, merging concurrent webhook and local-collector events into the live map organized by the \textbf{OpenAI~API}, with \textbf{0\% duplicates}
 \end{highlights}
 \end{onecolentry}
 
